@@ -29,8 +29,10 @@ const features = [
 ];
 
 // Function untuk mendapatkan class warna berdasarkan jenis
-const getColorClasses = (color) => {
-  const colorMap = {
+type Color = "blue" | "purple" | "green" | "orange";
+
+const getColorClasses = (color: Color) => {
+  const colorMap: Record<Color, { bg: string; icon: string; border: string; hover: string }> = {
     blue: {
       bg: 'bg-blue-50 dark:bg-blue-900/20',
       icon: 'text-blue-600 dark:text-blue-400',
@@ -56,7 +58,8 @@ const getColorClasses = (color) => {
       hover: 'hover:border-orange-400 dark:hover:border-orange-500'
     }
   };
-  return colorMap[color] || colorMap.blue;
+
+  return colorMap[color];
 };
 ---
 <section id="fitur" class="relative bg-gradient-to-b from-white to-slate-50 dark:from-gray-900 dark:to-gray-800 py-16 lg:py-24 overflow-hidden">
@@ -81,7 +84,7 @@ const getColorClasses = (color) => {
     <!-- Features Grid -->
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
       {features.map((feature, index) => {
-        const colorClasses = getColorClasses(feature.color);
+        const colorClasses = getColorClasses(feature.color as Color);
         return (
           <div 
             class={`group relative bg-white dark:bg-gray-900 p-6 rounded-xl border-2 ${colorClasses.border} ${colorClasses.hover} transition-all duration-500 hover:-translate-y-2 shadow-md hover:shadow-xl overflow-hidden animate-fade-in-up`}

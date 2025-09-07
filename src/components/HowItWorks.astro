@@ -1,8 +1,15 @@
 ---
 
 // src/components/HowItWorks.astro
+interface Step {
+  number: string;
+  title: string;
+  description: string;
+  icon: string;
+  color: Color;
+}
 
-const steps = [
+const steps: Step[] = [
   {
     number: "01",
     title: "Konsultasi Kebutuhan",
@@ -34,7 +41,9 @@ const steps = [
 ];
 
 // Function untuk mendapatkan class warna berdasarkan jenis
-const getColorClasses = (color) => {
+type Color = "blue" | "purple" | "green" | "orange";
+
+const getColorClasses = (color: Color) => {
   const colorMap = {
     blue: {
       bg: 'bg-blue-50 dark:bg-blue-900/20',
@@ -95,7 +104,7 @@ const getColorClasses = (color) => {
       <!-- Steps Grid -->
       <div class="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
         {steps.map((step, index) => {
-          const colorClasses = getColorClasses(step.color);
+          const colorClasses = getColorClasses(step.color as Color);
           return (
             <div 
               class={`group relative bg-white dark:bg-gray-800 p-6 lg:p-8 rounded-2xl border-2 ${colorClasses.border} transition-all duration-500 hover:-translate-y-2 shadow-md hover:shadow-xl overflow-hidden animate-fade-in-up`}

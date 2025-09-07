@@ -32,7 +32,9 @@ const services = [
 ];
 
 // Function untuk mendapatkan class warna berdasarkan jenis
-const getColorClasses = (color) => {
+type Color = "blue" | "green" | "indigo";
+
+const getColorClasses = (color: Color) => {
   const colorMap = {
     blue: {
       bg: 'bg-blue-50 dark:bg-blue-900/20',
@@ -78,7 +80,7 @@ const getColorClasses = (color) => {
     <!-- Services Grid -->
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
       {services.map((service, index) => {
-        const colorClasses = getColorClasses(service.color);
+        const colorClasses = getColorClasses(service.color as Color);
         return (
           <div 
             class={`group relative bg-white dark:bg-gray-900 p-6 lg:p-8 rounded-2xl border-2 ${colorClasses.border} ${colorClasses.hover} transition-all duration-500 hover:-translate-y-2 shadow-md hover:shadow-xl overflow-hidden animate-fade-in-up`}

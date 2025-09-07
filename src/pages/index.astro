@@ -11,7 +11,8 @@ import Cta from '../components/Cta.astro';
 <MainLayout title="FTR - Solusi Chatbot AI Cerdas">
   <Hero />
   <Services />
-  <Features />
+  <Features client:load/>
   <HowItWorks />
   <Faq />
-  <Cta />     </MainLayout>
+  <Cta /> 
+</MainLayout>
