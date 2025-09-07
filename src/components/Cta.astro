@@ -1,0 +1,33 @@
+---
+// src/components/Cta.astro
+const email = "ftr.official@gmail.com";
+const phone = "085703846460";
+const whatsappLink = `https://wa.me/6285703846460?text=${encodeURIComponent("Halo FTR, saya tertarik dengan layanan chatbot AI Anda dan ingin mendapatkan demo gratis.")}`;
+---
+<section id="kontak" class="bg-blue-600 dark:bg-blue-800">
+  <div class="container mx-auto px-6 py-16 lg:py-24 text-center text-white">
+    <h2 class="text-3xl lg:text-4xl font-bold">
+      Siap Mengubah Cara Bisnis Anda Berkomunikasi?
+    </h2>
+    <p class="mt-4 text-lg max-w-2xl mx-auto text-blue-100">
+      Hubungi kami sekarang untuk konsultasi gratis. Tim kami akan membantu Anda menemukan solusi chatbot terbaik yang sesuai dengan kebutuhan Anda.
+    </p>
+
+    <div class="mt-8">
+      <a href={whatsappLink} target="_blank" class="bg-white hover:bg-slate-100 text-blue-600 font-bold py-4 px-8 rounded-lg shadow-lg transition-transform transform hover:scale-105 text-lg">
+        Hubungi via WhatsApp
+      </a>
+    </div>
+
+    <div class="mt-10 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 text-blue-100">
+      <div class="flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" /></svg>
+        <span>{email}</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.211-.998-.552-1.348l-3.513-3.513a1.125 1.125 0 0 0-1.59 0L14.25 12.75a1.125 1.125 0 0 1-1.59 0l-3.513-3.513a1.125 1.125 0 0 1 0-1.59l2.828-2.828a1.125 1.125 0 0 0 0-1.59L8.34 3.793a1.125 1.125 0 0 0-1.59 0l-1.623 1.623a1.125 1.125 0 0 0-.39 1.481Z" /></svg>
+        <span>{phone}</span>
+      </div>
+    </div>
+  </div>
+</section>

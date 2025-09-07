@@ -1,0 +1,49 @@
+---
+// src/components/Features.astro
+const features = [
+  {
+    title: "Integrasi Mudah & Cepat",
+    description: "Kami dapat menghubungkan chatbot dengan sistem CRM atau database yang sudah Anda gunakan.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" /></svg>`
+  },
+  {
+    title: "Didukung AI Cerdas",
+    description: "Chatbot kami dilatih untuk memahami bahasa natural dan konteks percakapan pelanggan.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 21v-1.5M12 3v1.5M12 21v-1.5M12 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" /></svg>`
+  },
+  {
+    title: "Dukungan Penuh 24/7",
+    description: "Tim support kami selalu siap membantu Anda jika terjadi kendala atau butuh optimasi.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" /></svg>`
+  },
+  {
+    title: "Tanpa Perlu Coding",
+    description: "Kelola jawaban, alur percakapan, dan lihat laporan melalui dashboard yang mudah digunakan.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z" /></svg>`
+  },
+]
+---
+<section class="bg-white dark:bg-gray-900 py-16 lg:py-24">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-800 dark:text-white">
+        Kenapa Memilih FTR?
+      </h2>
+      <p class="mt-4 text-lg text-slate-600 dark:text-gray-300">
+        Kami tidak hanya membuat chatbot, kami membangun jembatan komunikasi untuk bisnis Anda.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {features.map(feature => (
+        <div class="text-center">
+          <div class="flex items-center justify-center h-16 w-16 bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 rounded-full mx-auto mb-4">
+            <Fragment set:html={feature.icon} />
+          </div>
+          <h3 class="text-xl font-bold text-slate-800 dark:text-white mb-2">{feature.title}</h3>
+          <p class="text-slate-600 dark:text-gray-300">{feature.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

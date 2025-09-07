@@ -1,0 +1,51 @@
+---
+// src/components/Faq.astro
+const faqData = [
+  {
+    question: "Berapa lama proses pembuatan chatbot dari awal hingga live?",
+    answer: "Prosesnya bervariasi tergantung kompleksitas, namun rata-rata memakan waktu antara 1 hingga 3 minggu dari konsultasi awal hingga chatbot siap digunakan oleh pelanggan Anda."
+  },
+  {
+    question: "Apakah saya perlu menyiapkan server atau hosting sendiri?",
+    answer: "Tidak perlu. Layanan kami sudah termasuk cloud hosting untuk chatbot Anda, sehingga Anda tidak perlu memikirkan infrastruktur teknis sama sekali."
+  },
+  {
+    question: "Bagaimana model harganya? Apakah subscription atau sekali bayar?",
+    answer: "Kami menawarkan model berlangganan (subscription) bulanan atau tahunan yang fleksibel. Biayanya sudah termasuk pembuatan, pemeliharaan, dan dukungan penuh. Hubungi kami untuk mendapatkan penawaran khusus."
+  },
+  {
+    question: "Apakah chatbot bisa diintegrasikan dengan sistem internal perusahaan saya?",
+    answer: "Tentu saja. Kami dapat melakukan integrasi khusus dengan sistem CRM, database produk, atau API internal lainnya yang Anda miliki untuk fungsionalitas yang lebih canggih."
+  }
+];
+---
+<section class="bg-white dark:bg-gray-900 py-16 lg:py-24">
+  <div class="container mx-auto px-6 max-w-3xl">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-800 dark:text-white">
+        Pertanyaan yang Sering Diajukan
+      </h2>
+      <p class="mt-4 text-lg text-slate-600 dark:text-gray-300">
+        Tidak menemukan jawaban Anda? Hubungi kami langsung.
+      </p>
+    </div>
+
+    <div class="space-y-4">
+      {faqData.map(item => (
+        <details class="group border-b border-slate-200 dark:border-gray-700 pb-4">
+          <summary class="flex items-center justify-between w-full cursor-pointer list-none">
+            <span class="text-lg font-medium text-slate-800 dark:text-white">{item.question}</span>
+            <span class="text-slate-500 group-open:rotate-180 transition-transform duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+              </svg>
+            </span>
+          </summary>
+          <p class="text-slate-600 dark:text-gray-300 mt-4">
+            {item.answer}
+          </p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

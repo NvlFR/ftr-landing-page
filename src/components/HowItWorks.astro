@@ -1,0 +1,53 @@
+---
+// src/components/HowItWorks.astro
+const steps = [
+  {
+    number: "01",
+    title: "Konsultasi Kebutuhan",
+    description: "Diskusikan tujuan dan kebutuhan bisnis Anda dengan tim ahli kami untuk merancang solusi chatbot yang paling efektif.",
+  },
+  {
+    number: "02",
+    title: "Kustomisasi & Pelatihan AI",
+    description: "Kami membangun alur percakapan dan melatih model AI sesuai dengan karakter dan proses bisnis Anda.",
+  },
+  {
+    number: "03",
+    title: "Integrasi & Uji Coba",
+    description: "Chatbot dihubungkan dengan nomor WhatsApp Business Anda dan diuji coba secara menyeluruh untuk memastikan performa.",
+  },
+  {
+    number: "04",
+    title: "Go Live & Dukungan",
+    description: "Setelah siap, chatbot Anda akan aktif melayani pelanggan. Kami tetap menyediakan dukungan penuh setelahnya.",
+  },
+];
+---
+<section class="bg-slate-50 dark:bg-gray-800 py-16 lg:py-24">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl lg:text-4xl font-bold text-slate-800 dark:text-white">
+        Proses Sederhana untuk Memulai
+      </h2>
+      <p class="mt-4 text-lg text-slate-600 dark:text-gray-300">
+        Hanya dalam 4 langkah, chatbot Anda siap merevolusikan bisnis Anda.
+      </p>
+    </div>
+
+    <div class="relative">
+      <div class="hidden lg:block absolute top-1/2 -translate-y-1/2 left-0 w-full h-0.5 bg-slate-300 dark:bg-gray-600"></div>
+
+      <div class="relative grid lg:grid-cols-4 gap-12">
+        {steps.map(step => (
+          <div class="text-center">
+            <div class="relative flex items-center justify-center w-16 h-16 bg-white dark:bg-gray-900 border-2 border-slate-300 dark:border-gray-600 rounded-full mx-auto mb-6 text-2xl font-bold text-blue-600 dark:text-blue-400">
+              {step.number}
+            </div>
+            <h3 class="text-xl font-bold text-slate-800 dark:text-white mb-2">{step.title}</h3>
+            <p class="text-slate-600 dark:text-gray-300">{step.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
